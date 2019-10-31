@@ -1,0 +1,5 @@
+#top { height: 15%; width:100%;  }
+#navigation { height: 70%; width:20%;  float: left}
+#content { height: 70%; width:80%;float:left}
+#footer { height: 15%; width:100%; clear: left}
+#target {width: 100%};

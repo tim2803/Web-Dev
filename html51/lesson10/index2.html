@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> 
+    <style>
+        canvas {
+            border: 3px double black;
+            }
+    </style>   
+</head>
+<body>
+    
+    <script> 
+    function createImage(){
+        drawCanvas1();
+        drawCanvas2();
+        drawCanvas3();
+    }
+    function drawCanvas1(){
+        var canvas = document.getElementById("my_canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "black";
+        ctx.fillRect(20, 20, 40 ,40);
+        ctx.fillStyle = "white";
+        ctx.fillRect(25, 25, 30 ,30);
+    }
+    function drawCanvas2(){
+        var canvas = document.getElementById("my_canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fillRect(70, 20, 80 ,25);
+        ctx.fillStyle = "green";
+        ctx.fillRect(75, 25, 85 ,30);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(80, 30, 90 ,35);
+    }
+    function drawCanvas3(){
+        var canvas = document.getElementById("my_canvas");
+        var ctx = canvas.getContext("2d"); 
+        ctx.fillStyle = "blue";
+        ctx.fillRect(20,110, 35 ,120);
+        ctx.fillStyle = "green";
+        ctx.fillRect(20,100, 35 ,30);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(70,120, 35 ,110);
+        ctx.fillStyle = "green";
+        ctx.fillRect(70,110, 35 ,15);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(120,120, 35 ,110);
+        ctx.fillStyle = "green";
+        ctx.fillRect(120,105, 35 ,15);
+    }
+    </script>
+    <body onload="createImage();">
+        <canvas id="my_canvas" width="300" height="300"></canvas>        
+    </body>
+</body>
+</html>

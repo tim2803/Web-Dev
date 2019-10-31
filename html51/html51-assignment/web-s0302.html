@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <title>
+        Home Page
+    </title>
+    <meta name="keywords" content="КПНУ, К-ПНУ, Каменец-Подольский национальный университет,
+    физико-математический факультет, моделирование, международная конференция" />
+    
+</head>
+<main>
+
+    <body>
+        <main>
+            <h1>Регистрация на конференцию</h1>
+            <p>Для регистрации на конференции и выставления счета-фактуры, просим заполнить и отправить нам
+                регистрационную
+                форму</p>
+            <p>Поля, отмеченные символом *, являются обязательными для заполнения.</p>
+            <form id="registration" method="post">
+                <fieldset>
+                    <legend>Конференцыя:</legend>
+                    <table>
+                        <tr>
+                            <td><label for="name">Название конференцыии*</label></td>
+                            <td><input id="name" name="fullname" type="text" required="required"></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>Сведения об участнике:</legend>
+                    <table>
+                        <tr>
+                            <td><label for="second_name">Фамилия:*</label></td>
+                            <td><input id="name" name="fullname" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="first_name">Имя:*</label></td>
+                            <td><input id="name" name="fullname" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name">Отчество:*</label></td>
+                            <td><input id="name" name="fullname" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name">Должность:*</label></td>
+                            <td><input id="name" name="fullname" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="user_email">E-mail:*</label></td>
+                            <td><input id="user_email" name="email" type="email" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="phone">Телефон:*</label></td>
+                            <td><input id="phone" name="phone" type="tel" required="required"
+                                    pattern="\(\d{3,4}\) \d{2,3}-\d{2}-\d{2}"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="phone">Мобильный телефон:*</label></td>
+                            <td><input id="phone" name="phone" type="tel" required="required"
+                                    pattern="\(\d{3,4}\) \d{2,3}-\d{2}-\d{2}"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Faks">Факс:*</label></td>
+                            <td><input id="Faks" name="Faks" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="promo-kod">Промо-код:</label></td>
+                            <td><input id="promo-kod" name="promo-kod" type="text"></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>Сведения об организации:</legend>
+                    <table>
+                        <tr>
+                            <td><label for="name_of_organisation">Полное название организации</label></td>
+                            <td><input id="name_of_organisation" name="name_of_organisation" type="text"
+                                    required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name_of_country">Страна регистрации:*</label></td>
+                            <td><input id="name_of_country" name="name_of_country" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="country">Город:*</label></td>
+                            <td><input id="country" name="country" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="INN">ИНН (VAT-номер для организаций из стран ЕС)</label></td>
+                            <td><input id="INN" name="INN" type="text"></td>
+                        </tr>
+                        <div><strong>Контактное лицо по оформлению документов:
+                            (совпадает с участником конференции)</strong>>
+                        </div>
+                        <tr>
+                            <td><label for="second_name">Фамилия:*</label></td>
+                            <td><input id="second_name" name="second_name" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="first_name">Имя:*</label></td>
+                            <td><input id="first_name" name="first_name" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name">Отчество:*</label></td>
+                            <td><input id="name" name="fullname" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="phone">Телефон:*</label></td>
+                            <td><input id="phone" name="phone" type="tel" required="required"
+                                    pattern="\(\d{3,4}\) \d{2,3}-\d{2}-\d{2}"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Faks">Факс:*</label></td>
+                            <td><input id="Faks" name="Faks" type="text" required="required"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="user_email">E-mail:*</label></td>
+                            <td><input id="user_email" name="email" type="email" required="required"></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>Дополнительно:</legend>
+                    <table>
+                        <tr>
+                            <td><label for="Note">Примечание:</label></td>
+                            <td>
+                                <textarea name="Note" id="Note" cols="10" rows="5"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <button type="submit">Отправить данные</button>
+                </fieldset>
+            </form>
+        </main>
+    </body>
+</main>
+
+</html>
