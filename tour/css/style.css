@@ -1,1 +1,7 @@
-# Empty CSS file for your own CSS
+p#information_of_country {
+    background: rgb(233, 92, 116);
+}
+
+body {
+    background: pink;
+}
