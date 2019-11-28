@@ -2,6 +2,14 @@
         background: rgb(233, 92, 116);
     }
     
+    p#scroll {
+        overflow: scroll;
+    }
+    
     body {
         background-image: url("../images/bg.jpg");
+    }
+    
+    .jumbotron {
+        background-image: url("../images/bgj.jpg");
     }
