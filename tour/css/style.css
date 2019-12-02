@@ -13,3 +13,11 @@
     .jumbotron {
         background-image: url("../images/bgj.jpg");
     }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    h2 {
+        text-align: center;
+    }
