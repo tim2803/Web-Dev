@@ -1,0 +1,8 @@
+@font-face {
+    font-family: Caveat;
+    src: url('../fonts/caveat.ttf') format('truetype');
+}
+
+body {
+    font-family: Caveat;
+}
