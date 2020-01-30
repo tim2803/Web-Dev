@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script>
+        var humans = [{
+            Name: "Vax Max",
+            Age: "55",
+            Salary: "55",
+        }, {
+            Name: "Bread Vread",
+            Age: "22",
+            Salary: "321",
+        }, {
+            Name: "Vampair Drakul",
+            Age: "2000",
+            Salary: "555",
+        }, {
+            Name: "Man From Shop",
+            Age: "45",
+            Salary: "785",
+        }, {
+            Name: "Max Vax",
+            Age: "33",
+            Salary: "44",
+        }, {
+            Name: "Infinity man",
+            Age: "2222",
+            Salary: "111",
+        }, ]
+
+        function copareByAge(humansA, humansB) {
+            if (humansA.Age == humansB.Age) {
+                return 0;
+            } else if (humansA.Age < humansB.Age)
+                return -1;
+            else
+                return 1;
+        }
+
+        function copareBySalary(humansA, humansB) {
+            if (humansA.Salary == humansB.Salary) {
+                return 0;
+            } else if (humansA.Salary < humansB.Salary)
+                return -1;
+            else
+                return 1;
+        }
+
+        function fillTable() {
+            humans.sort(copareBySalary);
+            document.writeln("<table> <thead><tr><th>Name</th><th>Age</th><th>Salary</th>");
+            for (let index = 0; index < humans.length; index++) {
+                let element = humans[index];
+                document.writeln("<tr><td>" + element.Name + "</td><td>" + element.Age + "</td><td>" + element.Salary + "</td>");
+            }
+            document.writeln("</tbody></table>");
+        }
+    </script>
+</head>
+
+<body onload="fillTable()">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>л
