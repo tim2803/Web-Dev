@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <script>
+        function zadacha() {
+            var tabl = [{
+                tabl_element: "<tr><td style='background-color:red'>&nbsp&nbsp&nbsp&nbsp</td>",
+            }, {
+                tabl_element: "<td style='background-color:green'>&nbsp&nbsp&nbsp&nbsp</td>",
+            }, {
+                tabl_element: "<td style='background-color:yellow'>&nbsp&nbsp&nbsp&nbsp</td></tr>",
+            }, {
+                tabl_element: "<tr><td style='background-color:green'>&nbsp&nbsp&nbsp&nbsp</td>",
+            }, {
+                tabl_element: "<td style='background-color:red'>&nbsp&nbsp&nbsp&nbsp</td>",
+            }, {
+                tabl_element: "<td style='background-color:blue'>&nbsp&nbsp&nbsp&nbsp</td></tr>",
+            }, {
+                tabl_element: "<tr><td style='background-color:blue'>&nbsp&nbsp&nbsp&nbsp</td>",
+            }, {
+                tabl_element: "<td style='background-color:green'>&nbsp&nbsp&nbsp&nbsp</td>",
+            }, {
+                tabl_element: "<td style='background-color:red'>&nbsp&nbsp&nbsp&nbsp</td></tr>",
+            }, ]
+
+
+            var body = document.getElementById('movie_list');
+            body.innerHTML += ('<div class="row"> <div class="col-sm-6 col-md-4">');
+            for (const key in tabl) {
+                document.writeln(tabl[key].tabl_element);
+            }
+            body.innerHTML += ('</div>');
+        }
+    </script>
+
+
+</head>
+
+<body onload="zadacha()">
+    <table class="table table-hover " id="tabl1">
+
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    </table>
+</body>
+
+</html>
