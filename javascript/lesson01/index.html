@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>localStorage Demo</title>
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <script>
+        function saveNote() {
+            var name = document.getElementById('notename').value;
+            var content = document.getElementById('notecontent').value;
+            if (content == '') {
+                alert('enter valid note text');
+            } else {
+                if (name == 0) {
+                    alert('enter valid note name');
+                } else {
+                    localStorage[name] = content;
+                }
+
+            }
+
+        }
+
+        function listLoad() {
+            var list = document.getElementById('notelist');
+            for (var i in localStorage) {
+                var a = document.createElement('a');
+                a.setAttribute('onclick', "loadNote('" + i + "'); return false;");
+                a.innerText = i;
+                var element = document.createElement('li');
+                element.appendChild(a);
+                list.appendChild(element);
+            }
+
+        }
+
+        function loadNote(v) {
+
+            document.getElementById('notecontent').value = localStorage[v];
+
+            /*выводим в текстовое поле текст записи*/
+
+            document.getElementById('notename').value = v;
+
+            /* выводим в поле наименование записи*/
+
+        }
+
+        function deleteNote() {
+
+            var name = document.getElementById('notename').value;
+
+            /*получаем значение наименования текущей записи из текстового поля*/
+
+            if (name != '') {
+
+                localStorage.removeItem(name);
+
+                /*удаление записи, в качестве идентификатора записи используется ее наименование*/
+
+            } else {
+                alert('note not found');
+            }
+
+            /* сообщение, выдаваемое при попытке удалить неопределенную запись*/
+
+        }
+    </script>
+</head>
+
+<body onload="listLoad();">
+    <div id="header">
+        <h1>
+            Пример работы с localStorage</h1>
+    </div>
+    <div id="notes">
+        <h3>
+            Список записей</h3>
+        <ol id="notelist">
+        </ol>
+    </div>
+    <div id="note">
+        <form id="formnote">
+            <fieldset>
+                <table>
+                    <tr>
+                        <td>
+                            <label class="notefield"> 
+                            Наименование 
+                                </label>
+                        </td>
+                        <td colspan="2">
+                            <input id="notename" type="text" class="notefield" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="notefield"> 
+                            Текст записи 
+                                </label>
+                        </td>
+                        <td colspan="2">
+                            <textarea id="notecontent" rows="10"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td class="notebtn">
+                            <button id="save" type="submit" onclick="saveNote(); "> 
+                            Сохранить</button>
+                        </td>
+                        <td class="notebtn">
+                            <button id="delete" type="submit" onclick="deleteNote();"> 
+                            Удалить</button>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+    <div id="footer">
+        <p class="footertext">
+            2013 г.</p>
+    </div>
+</body>
+
+</html>
