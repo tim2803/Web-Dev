@@ -8,13 +8,13 @@
     <title>Document</title>
     <script>
         function makeTable() {
-            var m = document.getElementByid(num1);
-            var n = document.getElementByid(num2);
-            var mas;
-            for (var i = 0; i <= n - m; i++) {
-                n++;
-                if (n % 2) {
-                    document.writeln("<tr><td>" + i + "</td><td>" + n + "</td></tr>");
+            var m = document.getElementById(num1);
+            var n = document.getElementById(num2);
+            var riz = n - m;
+            for (var i = 0; i <= riz; i++) {
+                m++;
+                if (m % 2 == 0) {
+                    answer.innerHTML += "<tr><td>" + i + "</td><td>" + m + "</td></tr>";
                 }
 
             }
@@ -36,7 +36,7 @@
         </div>
         <button type="button" onclick="makeTable()">makeTable</button>
     </form>
-    <table onload="makeTable()">
+    <table id="answer">
 
     </table>
 </body>
