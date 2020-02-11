@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>JS Bin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script>
         function zadacha() {
             var tabl = [{
@@ -28,12 +29,17 @@
             }, ]
 
 
-            var body = document.getElementById('movie_list');
-            body.innerHTML += ('<div class="row"> <div class="col-sm-6 col-md-4">');
-            for (const key in tabl) {
-                document.writeln(tabl[key].tabl_element);
+            for (let index = 0; index < tabl.length; index++) {
+                let element = tabl[index];
+                document.writeln(element.tabl_element);
             }
-            body.innerHTML += ('</div>');
+            // var body = document.getElementById('movie_list');
+            // body.innerHTML += ('<div class="row"> <div class="col-sm-6 col-md-4">');
+            // for (const key in tabl) {
+            //     document.writeln(tabl[key].tabl_element);
+            // }
+            // body.innerHTML += ('</div>');
+
         }
     </script>
 
