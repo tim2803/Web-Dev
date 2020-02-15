@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var country = [{
+            country_name: "Aland Islands",
+            counry_flag: "ax",
+        }, {
+            country_name: "Albania",
+            counry_smal_name: "al ",
+        }, {
+            country_name: "Austria",
+            counry_smal_name: "at",
+        }, {
+            country_name: "Belarus",
+            counry_smal_name: "by",
+        }, {
+            country_name: "Belgium",
+            counry_smal_name: "be",
+        }, {
+            country_name: "Bosnia and Herzegovina",
+            counry_smal_name: "ba",
+        }, {
+            country_name: "Bulgaria",
+            counry_smal_name: "bg",
+        }, {
+            country_name: "Croatia",
+            counry_smal_name: "hr",
+        }, {
+            country_name: "Cyprus",
+            counry_smal_name: "cy",
+        }, {
+            country_name: "Estonia",
+            counry_smal_name: "ee",
+        }, {
+            country_name: "Faroe Islands",
+            counry_smal_name: "fo",
+        }, {
+            country_name: "Finland",
+            counry_smal_name: "fi",
+        }, {
+            country_name: "France",
+            counry_smal_name: "fr",
+        }, {
+            country_name: "Germany",
+            counry_smal_name: "de",
+        }, {
+            country_name: "Gibraltar",
+            counry_smal_name: "gi",
+        }, {
+            country_name: "Greece",
+            counry_smal_name: "gr",
+        }, {
+            country_name: "Guernsey",
+            counry_smal_name: "gg",
+        }, {
+            country_name: "Holy See",
+            counry_smal_name: "va",
+        }, {
+            country_name: "Hungary",
+            counry_smal_name: "hu",
+        }, {
+            country_name: "Iceland",
+            counry_smal_name: "is",
+        }, {
+            country_name: "Irelands",
+            counry_smal_name: "ie",
+        }, {
+            country_name: " Isle of Man",
+            counry_smal_name: "im",
+        }, {
+            country_name: "Italy",
+            counry_smal_name: "it",
+        }, {
+            country_name: "Jersey",
+            counry_smal_name: "je",
+        }, {
+            country_name: "Kosovo",
+            counry_smal_name: "xk",
+        }, {
+            country_name: "Latvia",
+            counry_smal_name: "lv",
+        }, {
+            country_name: "Liechtenstein",
+            counry_smal_name: "li",
+        }, {
+            country_name: "Lithuania",
+            counry_smal_name: "lt",
+        }, {
+            country_name: "Luxembourg",
+            counry_smal_name: "lu",
+        }, {
+            country_name: "Malta",
+            counry_smal_name: "ma",
+        }, {
+            country_name: "Moldova",
+            counry_smal_name: "md",
+        }, {
+            country_name: "North Macedonia",
+            counry_smal_name: "mk",
+        }, {
+            country_name: "Northern Ireland",
+            counry_smal_name: "gb-nir",
+        }, {
+            country_name: " Norway",
+            counry_smal_name: "no",
+        }, {
+            country_name: "Poland",
+            counry_smal_name: "pl",
+        }, {
+            country_name: "Portugal",
+            counry_smal_name: "pt",
+        }, {
+            country_name: "Romania",
+            counry_smal_name: "ro",
+        }, {
+            country_name: "Russia",
+            counry_smal_name: "ru",
+        }, {
+            country_name: "San Marino",
+            counry_smal_name: "sm",
+        }, {
+            country_name: "Scotland",
+            counry_smal_name: "gb-sct",
+        }, {
+            country_name: "Serbia",
+            counry_smal_name: "rs",
+        }, {
+            country_name: "Slovakia",
+            counry_smal_name: "sk",
+        }, {
+            country_name: "Slovenia",
+            counry_smal_name: "sl",
+        }, {
+            country_name: "Spain",
+            counry_smal_name: "es",
+        }, {
+            country_name: " Svalbard and Jan Mayen",
+            counry_smal_name: "sj",
+        }, {
+            country_name: "Sweden",
+            counry_smal_name: "se",
+        }, {
+            country_name: "Switzerland",
+            counry_smal_name: "ch",
+        }, {
+            country_name: "Ukraine",
+            counry_smal_name: "ua",
+        }, {
+            country_name: "United Kingdom",
+            counry_smal_name: "gb",
+        }, {
+            country_name: "Wales",
+            counry_smal_name: "gb-wls",
+        }, ]
+
+        function fillTable() {
+            document.writeln("<table>");
+            for (let index = 0; index < country.length; index++) {
+                let element = country[index];
+                document.writeln("<tr><td>" + element.country_name + "</td><td><span class=" + flag - icon + flag - icon - element.counry_flag + "></span> </td><td>");
+            }
+            document.writeln("</table>");
+        }
+    </script>
+</head>
+
+<body onload="fillTable()">
+
+</body>
+
+</html>

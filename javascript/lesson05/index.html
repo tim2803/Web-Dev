@@ -10,11 +10,12 @@
         function makeTable() {
             var m = document.getElementById(num1);
             var n = document.getElementById(num2);
-            var riz = n - m;
-            for (var i = 0; i <= riz; i++) {
+            var p_number = 0;
+            for (var i = 0; i <= n - m; i++) {
                 m++;
                 if (m % 2 == 0) {
-                    answer.innerHTML += "<tr><td>" + i + "</td><td>" + m + "</td></tr>";
+                    p_number++;
+                    answer.innerHTML += "<tr><td>" + p_number + "</td><td>" + m + "</td></tr>";
                 }
 
             }

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let course = [{
+            "ccy": "USD",
+            "base_ccy": "UAH",
+            "buy": "24.29000",
+            "sale": "24.64000"
+        }, {
+            "ccy": "EUR",
+            "base_ccy": "UAH",
+            "buy": "26.31000",
+            "sale": "26.81000"
+        }, {
+            "ccy": "RUR",
+            "base_ccy": "UAH",
+            "buy": "0.35200",
+            "sale": "0.38700"
+        }, {
+            "ccy": "BTC",
+            "base_ccy": "USD",
+            "buy": "9739.2559",
+            "sale": "10764.4407"
+        }];
+
+        let atms = {
+            "devices": [{
+                "type": "ATM",
+                "latitude": "26.586977",
+                "longitude": "48.680760",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Огиенко,дом 41",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Огієнка,будинок 41",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Ohiienka,building 41",
+                "placeRu": "Отделение банка",
+                "placeUa": "Відділення банку",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.588809",
+                "longitude": "48.666008",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Панивецкая,дом 13",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Панівецька,будинок 13",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Panivetska,building 13",
+                "placeRu": "Продуктовый магазин",
+                "placeUa": "Продуктовий магазин",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.571450",
+                "longitude": "48.674187",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Старобульварная,дом 6",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Старобульварна,будинок 6",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Starobulvarna,building 6",
+                "placeRu": "Районный Совет",
+                "placeUa": "Районна Рада",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.591749",
+                "longitude": "48.683541",
+                "tw": {
+                    "mon": "09:00 - 18:00",
+                    "tue": "09:00 - 18:00",
+                    "wed": "09:00 - 18:00",
+                    "thu": "09:00 - 18:00",
+                    "fri": "09:00 - 18:00",
+                    "sat": "00:00 - 00:00",
+                    "sun": "00:00 - 00:00",
+                    "hol": "00:00 - 00:00"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,проспект Грушевского,дом 34А",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,проспект Грушевського,будинок 34А",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,avenue Hrushevskoho,building 34A",
+                "placeRu": "Отделение банка",
+                "placeUa": "Відділення банку",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.592998",
+                "longitude": "48.678467",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,проспект Грушевского,дом 25",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,проспект Грушевського,будинок 25",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,avenue Hrushevskoho,building 25",
+                "placeRu": "Каменец-Подольское отделение №№10",
+                "placeUa": "Камянець-Подільське відділення №№10",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.589853",
+                "longitude": "48.679150",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Соборная,дом 29А",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Соборна,будинок 29А",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Soborna,building 29A",
+                "placeRu": "здание \"Выставочный зал\"",
+                "placeUa": "здание \"Выставочный зал\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.587211",
+                "longitude": "48.679430",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Соборная,дом 4",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Соборна,будинок 4",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Soborna,building 4",
+                "placeRu": "готель \"Смотрич\"",
+                "placeUa": "готель \"Смотрич\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.590340",
+                "longitude": "48.677984",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Князей Кориатовичей,дом 19",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Князів Кориатовичів,будинок 19",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Kniaziv Koryatovychiv,building 19",
+                "placeRu": "Автовокзал",
+                "placeUa": "Автовокзал",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.589433",
+                "longitude": "48.681416",
+                "tw": {
+                    "mon": "08:00 - 22:00",
+                    "tue": "08:00 - 22:00",
+                    "wed": "08:00 - 22:00",
+                    "thu": "08:00 - 22:00",
+                    "fri": "08:00 - 22:00",
+                    "sat": "08:00 - 22:00",
+                    "sun": "08:00 - 22:00",
+                    "hol": "08:00 - 22:00"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Гагарина,дом 42/1",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Гагаріна,будинок 42/1",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Haharina,building 42/1",
+                "placeRu": "магазин \"Фуршет\"",
+                "placeUa": "крамниця \"Фуршет\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.599820",
+                "longitude": "48.687614",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Привокзальная,дом 18",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Привокзальна,будинок 18",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Pryvokzalna,building 18",
+                "placeRu": "Продуктовый магазин",
+                "placeUa": "Продуктовий магазин",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.574033",
+                "longitude": "48.700220",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,шоссе Нигинское,дом 35",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,шосе Нігинське,будинок 35",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,highway Nyhynske,building 35",
+                "placeRu": "магазин \"Мрия\"",
+                "placeUa": "магазин \"Мрія\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.581428",
+                "longitude": "48.665664",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Леси Украинки,дом 95",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Лесі Українки,будинок 95",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Lesi Ukrainky,building 95",
+                "placeRu": "Колледж ПГАТУ",
+                "placeUa": "Коледж ПГАТУ",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.571079",
+                "longitude": "48.685944",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Суворова,дом 17",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Суворова,будинок 17",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Suvorova,building 17",
+                "placeRu": "Индустриальный коледж",
+                "placeUa": "Индустриальный коледж",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.604793",
+                "longitude": "48.674517",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Князей Кориатовичей,дом  50",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Князів Кориатовичів,будинок  50",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Kniaziv Koryatovychiv,building  50",
+                "placeRu": "Магазин \"Злагода\"",
+                "placeUa": "магазин \"Злагода\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.597049",
+                "longitude": "48.652976",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Фрунзе,дом 13",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Фрунзе,будинок 13",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Frunze,building 13",
+                "placeRu": "Дом быта",
+                "placeUa": "Дом побуту",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.590828",
+                "longitude": "48.672203",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,проспект Грушевского,дом 56",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,проспект Грушевського,будинок 56",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,avenue Hrushevskoho,building 56",
+                "placeRu": "магазин \"Абсолют\"",
+                "placeUa": "магазин\"Абсолют\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.598486",
+                "longitude": "48.729161",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Мира,дом 4",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Миру,будинок 4",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Myru,building 4",
+                "placeRu": "Маркет \"Родына\"",
+                "placeUa": "Маркет \"Родина\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.568311",
+                "longitude": "48.699263",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица 30-Летия Победы,дом 2/4",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця 30-річчя Перемоги,будинок 2/4",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street 30-richchia Peremohy,building 2/4",
+                "placeRu": "отделение банка",
+                "placeUa": "відділення банку",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.587880",
+                "longitude": "48.679047",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Соборная,дом 27",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Соборна,будинок 27",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Soborna,building 27",
+                "placeRu": "Магазин \"Пирамида\"",
+                "placeUa": "Магазин \"Піраміда\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.592998",
+                "longitude": "48.678467",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,проспект Грушевского,дом 25",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,проспект Грушевського,будинок 25",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,prospect Hrushevskoho,building 25",
+                "placeRu": "Каменец-Подольское отделение 10",
+                "placeUa": "Камянець-Подільське відділення 10",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.585893",
+                "longitude": "48.684954",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Огиенко,дом 20",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Огієнка,будинок 20",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Ohiienka,building 20",
+                "placeRu": "Городская поликлиника № 1",
+                "placeUa": "Міська Поліклініка № 1",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.580686",
+                "longitude": "48.685372",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Шевченко,дом 13",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Шевченка,будинок 13",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Shevchenka,building 13",
+                "placeRu": "Агротехническая академия",
+                "placeUa": "Агротехнічна академія",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.566944",
+                "longitude": "48.694769",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Космонавтов,дом 10",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Космонавтів,будинок 10",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Kosmonavtiv,building 10",
+                "placeRu": "Управление ЖЕКа",
+                "placeUa": "Управління ЖЕКа",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.592998",
+                "longitude": "48.678467",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,проспект Грушевского,дом 25",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,проспект Грушевського,будинок 25",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,prospect Hrushevskoho,building 25",
+                "placeRu": "Отделение Каменец-Подольское №10",
+                "placeUa": "Відділення Камянець-Подільське №10",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.592913",
+                "longitude": "48.680097",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 00:00",
+                    "hol": "00:00 - 00:00"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,проспект Грушевского,дом 21г",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,проспект Грушевського,будинок 21г",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,avenue Hrushevskoho,building 21h",
+                "placeRu": "магазин \"Изумруд\"",
+                "placeUa": "магазин \"Iзумруд\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.580447",
+                "longitude": "48.664897",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Ивана Франко,дом 30",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Франка Івана,будинок 30",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Franka Ivana,building 30",
+                "placeRu": "Поликлиника № 2",
+                "placeUa": "Поліклініка № 2",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.573077",
+                "longitude": "48.696547",
+                "tw": {
+                    "mon": "08:00 - 22:00",
+                    "tue": "08:00 - 22:00",
+                    "wed": "08:00 - 22:00",
+                    "thu": "08:00 - 22:00",
+                    "fri": "08:00 - 22:00",
+                    "sat": "08:00 - 22:00",
+                    "sun": "08:00 - 22:00",
+                    "hol": "08:00 - 22:00"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,шоссе Нигинское,дом 42/1",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,шосе Нігинське,будинок 42/1",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,highway Nyhynske,building 42/1",
+                "placeRu": "магазин \"Сильпо\"",
+                "placeUa": "магазин Сільпо",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.580936",
+                "longitude": "48.677769",
+                "tw": {
+                    "mon": "08:00 - 18:00",
+                    "tue": "08:00 - 18:00",
+                    "wed": "08:00 - 18:00",
+                    "thu": "08:00 - 18:00",
+                    "fri": "08:00 - 18:00",
+                    "sat": "08:00 - 18:00",
+                    "sun": "08:00 - 18:00",
+                    "hol": "00:00 - 00:00"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Огиенко,дом 61",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Огієнка,будинок 61",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Ohiienka,building 61",
+                "placeRu": "Университет",
+                "placeUa": "Університет",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.583750",
+                "longitude": "48.676670",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Леси Украинки,дом 34",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Лесі Українки,будинок 34",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Lesi Ukrainky,building 34",
+                "placeRu": "Магазин \"Огонёк\"",
+                "placeUa": "Магазин \"Вогник\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.586011",
+                "longitude": "48.674488",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,проспект Грушевского,дом 62А",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,проспект Грушевського,будинок 62А",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,avenue Hrushevskoho,building 62A",
+                "placeRu": "Библиотека",
+                "placeUa": "Бібліотека",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.587211",
+                "longitude": "48.679430",
+                "tw": {
+                    "mon": "08:30 - 17:30",
+                    "tue": "08:30 - 17:30",
+                    "wed": "08:30 - 17:30",
+                    "thu": "08:30 - 17:30",
+                    "fri": "08:30 - 17:30",
+                    "sat": "09:00 - 16:00",
+                    "sun": "00:00 - 00:00",
+                    "hol": "00:00 - 00:00"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Соборная,дом 4",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Соборна,будинок 4",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Soborna,building 4",
+                "placeRu": "Отделение банка",
+                "placeUa": "Відділення банку",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.567064",
+                "longitude": "48.701199",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Васильева,дом 1",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Васильєва,будинок 1",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Vasylieva,building 1",
+                "placeRu": "магазин \"ОЛИМП\"",
+                "placeUa": "магазин \"ОЛІМП\"",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.586627",
+                "longitude": "48.678783",
+                "tw": {
+                    "mon": "00:00 - 23:59",
+                    "tue": "00:00 - 23:59",
+                    "wed": "00:00 - 23:59",
+                    "thu": "00:00 - 23:59",
+                    "fri": "00:00 - 23:59",
+                    "sat": "00:00 - 23:59",
+                    "sun": "00:00 - 23:59",
+                    "hol": "00:00 - 23:59"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,проспект Грушевского,дом 25",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,проспект Грушевського,будинок 25",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,avenue Hrushevskoho,building 25",
+                "placeRu": "Отделение банка",
+                "placeUa": "Відділення банку",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.589758",
+                "longitude": "48.677961",
+                "tw": {
+                    "mon": "09:00 - 18:00",
+                    "tue": "09:00 - 18:00",
+                    "wed": "09:00 - 18:00",
+                    "thu": "09:00 - 18:00",
+                    "fri": "09:00 - 18:00",
+                    "sat": "00:00 - 00:00",
+                    "sun": "00:00 - 00:00",
+                    "hol": "00:00 - 00:00"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,улица Князей Кориатовичей,дом 9",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,вулиця Князів Кориатовичів,будинок 9",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,street Kniaziv Koryatovychiv,building 9",
+                "placeRu": "Отделение банка",
+                "placeUa": "Відділення банку",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }, {
+                "type": "ATM",
+                "latitude": "26.595612",
+                "longitude": "48.678484",
+                "tw": {
+                    "mon": "09:00 - 18:00",
+                    "tue": "09:00 - 18:00",
+                    "wed": "09:00 - 18:00",
+                    "thu": "09:00 - 18:00",
+                    "fri": "09:00 - 18:00",
+                    "sat": "08:30 - 16:30",
+                    "sun": "00:00 - 00:00",
+                    "hol": "00:00 - 00:00"
+                },
+                "fullAddressRu": "Украина,область Хмельницкая,район Каменец-Подольский,город Каменец-Подольский,проспект Грушевского,дом 25",
+                "fullAddressUa": "Україна,область Хмельницька,район Кам’янець-Подільський,місто Кам’янець-Подільський,проспект Грушевського,будинок 25",
+                "fullAddressEn": "Ukraine,area Khmelnytska,district Kamianets-Podilskyi,city Kamianets-Podilskyi,avenue Hrushevskoho,building 25",
+                "placeRu": "Отделение банка",
+                "placeUa": "Відділення банку",
+                "cityRU": "Каменец-Подольский",
+                "cityUA": "Кам’янець-Подільський",
+                "cityEN": "Kamianets-Podilskyi"
+            }],
+            "address": "",
+            "city": ""
+        };
+
+        function course_1() {
+            course_2.innerHTML += "<thead><tr><th>ccy</th><th>base_ccy</th><th>buy</th><th>sale</th></tr></thead><tbody>";
+            for (let index = 0; index < course.length; index++) {
+                let element = course[index];
+                course_2.innerHTML += "<tr><td>" + element.ccy + "</td><td>" + element.base_ccy + "</td><td>" + element.buy + "</td><td>" + element.sale + "</td>";
+            }
+            course_2.innerHTML += "</tbody>";
+        }
+
+        function atms_1() {
+            for (let index = 0; index < atms.length; index++) {
+                let element = atms[index];
+                atms_2.innerHTML += "<tr><td>" + element.latitude + "</td><td>" + element.longitude + "</td><td>" + element.tw + "</td><td>" + element.fullAddressRu + "</td><td>" + element.fullAddressUa + "</td><td>" + element.fullAddressEa + "</td><td>" + element.placeRu + "</td><td>" + element.placeUa + "</td><td>" + element.cityRU + "</td><td>" + element.cityUA + "</td><td>" + element.cityEN + "</td>";
+            }
+        }
+    </script>
+</body>
+<table id="course_2">
+
+</table>
+<table id=" atms_2">
+
+</table>
+
+</html>
