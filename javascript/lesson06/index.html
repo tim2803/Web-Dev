@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css">
     <script>
         var country = [{
             country_name: "Aland Islands",
@@ -160,10 +161,14 @@
 
         function fillTable() {
             document.writeln("<table>");
-            for (let index = 0; index < country.length; index++) {
-                let element = country[index];
-                document.writeln("<tr><td>" + element.country_name + "</td><td><span class=" + flag - icon + flag - icon - element.counry_flag + "></span> </td><td>");
+            var n = country.length / 6;
+            for (let i = 0; i < n; i++) {
+                for (let index = 0; index < 5; index++) {
+                    let element = country[index];
+                    document.writeln("<tr><td>" + element.country_name + "</td><td><span class=  flaп-icon  flag-icon-" + element.counry_flag + "></span> </td><td>");
+                }
             }
+
             document.writeln("</table>");
         }
     </script>
